@@ -1,25 +1,25 @@
-const {Datatypes} =require('sequelize')
+const { DataTypes } = require("sequelize");
 
-const sequelize = require('../db')
+const sequelize = require("../db");
 
 const Movie = sequelize.define("movie", {
   id: {
-    type: Datatypes.UUID,
-    defaultvalue: Datatypes.UUIDV4,
+    type: DataTypes.UUID,
+    defaultvalue: DataTypes.UUIDV4,
     allowNull: false,
     primaryKey: true
   },
   title: {
-    type: Datatypes.STRING,
+    type: DataTypes.STRING,
     allowNull: false
   },
   comment: {
-    type: Datatypes.STRING,
+    type: DataTypes.STRING,
     allowNull: false
   },
   image: {
-    type: Datatypes.STRING,
+    type: DataTypes.STRING,
     allowNull: false
   }
 });
-module.exports = Movie
+module.exports = Movie;

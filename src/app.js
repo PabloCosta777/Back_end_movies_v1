@@ -1,6 +1,7 @@
 const express = require ('express')
-const express = require('express');
 const logger = require('morgan');
+const bodyParser = require('body-parser');
+
 
 const dotenv = require("dotenv")
 dotenv.config()
@@ -9,9 +10,11 @@ const indexRouter = require('./routes/index');
 
 const app = express();
 
+app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
+app.use(bodyParser.json({ limit: '50mb' }));
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+
 
 //revisar
 app.use((req,res,next)=>{

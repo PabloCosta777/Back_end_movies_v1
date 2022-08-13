@@ -1,5 +1,6 @@
 const router = require("express").Router();
+const def = require("../Helpers/defaultResponse");
 
-router.use();
+router.get('/',def);
 
 module.exports = router;
