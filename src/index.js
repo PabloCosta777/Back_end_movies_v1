@@ -5,7 +5,7 @@ const PORT =process.env.PORT
 require('./Models/relations')
 
 app.listen(PORT,()=>{
-    db.sync({force:true})
+     db.sync({force:false})
     .then(console.log('Conectado a la BBDD'))
     .then(console.log(`Escuchando en el puerto ${PORT}`))
     .catch((e)=>console.log(e))

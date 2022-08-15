@@ -1,29 +1,27 @@
-const {Datatypes} =require('sequelize')
-const { toDefaultValue } = require('sequelize/types/utils')
+const {DataTypes} =require('sequelize')
 
 const sequelize = require('../db')
 
 const User =sequelize.define('user',{
     id:{
-        type: Datatypes.UUID,
-        defaultvalue: Datatypes.UUIDV4,
-        allowNull: false ,
+        type: DataTypes.INTEGER,
+        autoIncrement:true,
         primaryKey: true 
     },
     name:{
-        type: Datatypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false
     },
     email:{
-        type: Datatypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false
     },
     password:{
-        type: Datatypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false
     },
     isAdmin:{
-        type: Datatypes.BOOLEAN,
+        type: DataTypes.BOOLEAN,
         defaultValue: false
     }
 })

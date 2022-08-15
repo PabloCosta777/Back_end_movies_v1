@@ -4,9 +4,8 @@ const sequelize = require("../db");
 
 const Movie = sequelize.define("movie", {
   id: {
-    type: DataTypes.UUID,
-    defaultvalue: DataTypes.UUIDV4,
-    allowNull: false,
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
     primaryKey: true
   },
   title: {

@@ -1,12 +1,10 @@
 const { DataTypes } = require("sequelize");
-
 const sequelize = require("../db");
 
 const Actor = sequelize.define("actor", {
   id: {
-    type: DataTypes.UUID,
-    defaultvalue: DataTypes.UUIDV4,
-    allowNull: false,
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
     primaryKey: true
   },
   name: {
