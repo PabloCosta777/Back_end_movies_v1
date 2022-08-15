@@ -13,7 +13,7 @@ const Movie = sequelize.define("movie", {
     allowNull: false
   },
   comment: {
-    type: DataTypes.STRING,
+    type: DataTypes.TEXT,
     allowNull: false
   },
   image: {
