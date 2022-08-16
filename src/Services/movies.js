@@ -17,11 +17,17 @@ module.exports={
         });
         return response 
     },
-    findByGenre:async(genre)=>{},
     deleteMovie:async(id)=>{
      await movies.destroy({where:{id}})
      
     },
-    editMovie:async(id)=>{}
+    editMovie:async(mov,title,comment,image)=>{
+      
+      mov.update({title,comment,image}).then(e=>e)
+    },
+    addMovie:async(title,comment,image,genres)=>{
+      const movie= await movies.create({title,comment,image})
+      movie.addGenres(genres)
+    }
 
 }
